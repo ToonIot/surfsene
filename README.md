@@ -129,3 +129,23 @@ Prices, inventory availability, delivery lead times, device specifications and c
 - All pages now load local static CSS; no Tailwind runtime is required in the browser.
 - Removed `loading="lazy"` from the small set of local marketing/catalog images on the landing page to avoid Edge's lazy-image intervention console notice; optimized WebP assets and async decoding remain.
 - JavaScript syntax and all local asset references were revalidated.
+
+### V11.1 Smart Rental Catalog fix
+- Reworked category filters into a clean segmented control with one visually active category.
+- Removed the unwanted border appearance from every category button.
+- Added ARIA tab semantics and visible keyboard focus.
+- Mobile category filter becomes a compact 2-column control.
+- Softened the search/filter panel background and standardized catalog-card borders.
+
+### V11.2 catalog event-scope fix
+- Fixed `filteredRender is not defined` when clicking Smart Rental Catalog categories.
+- `filteredRender` is now explicitly exported on `window` because category buttons are generated with inline `onclick` handlers.
+- Existing input/select listeners continue using the same local function.
+
+### V11.3 catalog events hardened
+- Removed all inline category `onclick` handlers, including the legacy `render()` category path.
+
+### V11.4 About & Contact
+- Added an About SURFSENE section explaining the rental → connectivity → permanent-monitoring service path.
+- Added contact block for Natchapon Makkunchon with LINE and tap-to-call actions.
+- Added About to desktop/mobile navigation and a compact contact shortcut in the footer.
