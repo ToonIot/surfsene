@@ -97,3 +97,35 @@ Prices, inventory availability, delivery lead times, device specifications and c
 - Returning to the landing page within 1 hour skips the intro immediately.
 - After 1 hour, the intro is eligible to play again and the timestamp resets.
 - If localStorage is unavailable, the page safely falls back to the normal intro behavior.
+
+### V10.7 asset optimization
+- Converted large photographic PNG assets to WebP quality 80.
+- Hero image capped at 1600px wide.
+- Installation/delivery imagery capped at 1280px wide.
+- Catalog product imagery capped at 900px wide.
+- Optimized PNG logo/favicon and retained alpha-capable branding assets where appropriate.
+- Added lazy loading and async decoding for non-critical local images.
+
+### V10.8 bug fix
+- Restored the `openProduct()` product-detail modal function accidentally removed during the V10.5 Compatibility Checker extraction.
+- Restored accessory rendering, modal close behavior, and "add to rental" from product detail.
+- Exported `openProduct` to `window` for inline catalog handlers and retained the availability-calendar wrapper.
+
+### V10.9 responsive hardening
+- Responsive viewport with safe-area support for modern phones.
+- Mobile/tablet/desktop breakpoints with overflow protection.
+- Inputs render at 16px to prevent unwanted iOS Safari zoom.
+- 40px+ touch targets for links/buttons and larger mobile menu button.
+- Dynamic viewport height (`100dvh`) for mobile drawers and cart.
+- Product detail becomes a bottom-sheet style modal on phones.
+- Header logo and hero typography scale across 320px phones through large desktop screens.
+- Hero background positioning tuned for phone/tablet/desktop.
+- Horizontal page overflow prevention and responsive media defaults.
+- Existing reduced-motion handling retained.
+
+### V11 production CSS cleanup
+- Removed Tailwind Play CDN from all pages.
+- Compiled the Tailwind utilities used by this static project into `assets/css/tailwind.css` using the installed Tailwind compiler.
+- All pages now load local static CSS; no Tailwind runtime is required in the browser.
+- Removed `loading="lazy"` from the small set of local marketing/catalog images on the landing page to avoid Edge's lazy-image intervention console notice; optimized WebP assets and async decoding remain.
+- JavaScript syntax and all local asset references were revalidated.
