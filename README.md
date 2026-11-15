@@ -149,3 +149,22 @@ Prices, inventory availability, delivery lead times, device specifications and c
 - Added an About SURFSENE section explaining the rental → connectivity → permanent-monitoring service path.
 - Added contact block for Natchapon Makkunchon with LINE and tap-to-call actions.
 - Added About to desktop/mobile navigation and a compact contact shortcut in the footer.
+
+### V12 UX Stabilization
+- Replaced generated catalog/cart inline action handlers with `data-action` event delegation.
+- Reframed availability as a request to check dates; no demo stock-count claim is shown.
+- Added quote submission architecture with validation, loading, success/error states, references, configurable POST endpoint, and honest local-draft fallback.
+- Added cart progress and missing-information validation before checkout.
+- Added 8-item FAQ covering deposit, calibration, delivery, self-install, damage, gateway compatibility, data handling, and returns.
+- Added dialog semantics, Escape handling, focus trapping, focus restoration, and consistent focus-visible styling.
+
+Configure real submission before launch:
+```html
+<script>window.SURFSENE_QUOTE_ENDPOINT='https://your-api.example.com/quotes';</script>
+```
+
+### V12.1 Field-service CTA placement
+- Removed the standalone "บริการหน้างาน" link from the upper-right header action area.
+- Kept the upper-right action focused on the primary rental CTA: "เลือกเครื่องมือ".
+- Added a prominent "ขอบริการติดตั้งหน้างาน" CTA inside the Delivery / Installation section.
+- Added "ดูขั้นตอนการเช่า" as the secondary CTA next to it.
