@@ -13,3 +13,87 @@ V5 evolves the static landing page into an interactive rental-service prototype.
 
 ## Prototype data disclaimer
 Prices, inventory availability, delivery lead times, device specifications and calendar bookings are demo data only. Replace with approved pricing, real inventory/API data, actual product specifications and delivery SLA before commercial release.
+
+
+### V6 Micro-interactions
+- Scroll progress energy bar
+- Ambient cursor glow
+- Reveal-on-scroll
+- Dynamic 3D catalog card tilt
+- Hero live-data stream
+- Floating SURFSENE Quick Start
+- Active navigation highlighting
+- Reduced-motion support
+
+### V6.1 Fix
+- Fixed invalid `document.querySelector('#')` from the home logo link.
+- Header section observer now ignores `href="#"` and safely handles invalid selectors.
+
+### V7 additions
+- Mobile navigation drawer
+- Product search and availability/protocol filters
+- Smart Package Builder for Energy Audit, Environment, Gateway and Permanent Monitoring
+- Sticky rental-cart summary
+- Quote-request summary form (browser-only prototype)
+- Lazy loading/async decoding on generated catalog images
+
+### V8 additions
+- Persistent cart and rental dates via localStorage
+- Rental cart drawer with checkout shortcut
+- Compare up to 3 rental products
+- 3-question recommendation quiz
+- Toast micro-feedback
+- V7 features retained
+
+### V9 additions
+- Interactive Device → Gateway → SURFSENE Cloud → Dashboard data-flow section
+- Clickable architecture nodes with protocol/context details
+- Animated telemetry packets between architecture layers
+- Live/Offline/Existing Equipment scenario selector
+- Gentle simulated Volt/Amp/kW telemetry for UX demonstration
+- Reduced-motion and hidden-tab handling for telemetry animation
+
+### V9.1 UX adjustment
+- Removed the intrusive bottom sticky rental summary bar.
+- Rental cart now appears as a compact floating cart badge only when at least one item is selected.
+- Clicking the compact cart opens the existing right-side rental cart drawer.
+
+### V10 structure
+- Fixed cart drawer `classList.toggle` error caused by a function/element global-name collision.
+- Main landing page remains `index.html`.
+- Added separate pages: `site-configurator.html`, `rental-simulator.html`, `rent-vs-buy.html`, and `live-dashboard.html`.
+- All calculator values and telemetry remain demo/prototype data.
+
+### V10.1 UX change
+- Moved SURFSENE Interactive Tools directly after the service-model introduction and before delivery/catalog decision steps.
+- Reframed the section as a customer decision aid rather than an auxiliary feature area.
+
+### V10.2 UX cleanup
+- Removed Recommendation Quiz from the landing page.
+- Retained SURFSENE Interactive Tools as the early decision-support layer.
+- Retained Smart Package Builder because it directly builds rentable solution packages.
+
+### V10.3 Rental Journey redesign
+- Moved "How to Rent" immediately before Rental Catalog where rental intent is highest.
+- Rebuilt it as a prominent dark stepper/timeline with Choose → Schedule → Deliver → Measure & Return.
+- Added clear Self-install vs On-site options and direct CTAs to Catalog and Rental Cost Simulator.
+
+### V10.4 checkout-context UX
+- Removed standalone Delivery Location / Availability section from landing page.
+- Moved availability into Product Detail as "วันที่พร้อมให้เช่า" with a compact 14-day selector.
+- Selecting an available date now populates the rental pickup date.
+- Moved delivery area/destination selection into the Rental Cart Drawer.
+- Delivery lead-time text remains explicit demo data.
+
+### V10.5 Interactive Tools consolidation
+- Removed standalone Compatibility Checker and Smart Package Builder sections from the landing page.
+- Added both as cards inside SURFSENE Interactive Tools.
+- Created `compatibility-checker.html` and `package-builder.html` as dedicated pages.
+- Updated landing navigation so Tools becomes the central decision-support destination.
+
+### V10.6 Intro frequency control
+- Intro animation shows on first visit.
+- The timestamp is stored in browser `localStorage` under `surfsene_intro_last_seen`.
+- Returning to the landing page within 1 hour skips the intro immediately.
+- After 1 hour, the intro is eligible to play again and the timestamp resets.
+- If localStorage is unavailable, the page safely falls back to the normal intro behavior.
